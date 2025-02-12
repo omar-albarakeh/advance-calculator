@@ -20,7 +20,17 @@ class _HomeState extends State<Home> {
         width: double.infinity,
         height: double.infinity,
         color: Colors.black,
-        child: Text("test test"),
+        child:Row(
+    children: [
+         for(int i=0 ;i<4 ;i++)
+           Container(
+             width: 70,
+             height: 70,
+             color: Colors.white,
+             margin: EdgeInsets.all(5),
+           ),
+       ],
+        ),
       ),
     );
   }
