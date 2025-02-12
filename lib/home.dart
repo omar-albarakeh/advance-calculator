@@ -23,7 +23,14 @@ class _HomeState extends State<Home> {
         width: double.infinity,
         height: double.infinity,
         color: Colors.black,
-        child: Column(
+        child:Column(
+    children: [
+        Container(
+          color: Colors.grey,
+          width: 350,
+          height: 100,
+        ),
+        Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -42,8 +49,8 @@ class _HomeState extends State<Home> {
                 ],
               ),
           ],
-        ),
-      ),
+        ),],
+      ),),
     );
   }
 }
