@@ -11,9 +11,9 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   final buttonlabels = [
-    ['AC', '%', '√', 'π' ,'AC'],
-    ['x^2', 'x^3', 'sin', 'cos', 'tan'],
-    ['e^x', '1/x', 'sin^-1', 'cos^-1', 'tan^-1'],
+    ['AC', '%', '√', 'π' ],
+    ['x^','sin', 'cos', 'tan'],
+    ['e^x', 'sin^-1', 'cos^-1', 'tan^-1'],
     ['7', '8', '9', '/'],
     ['4', '5', '6', '*'],
     ['1', '2', '3', '-'],
