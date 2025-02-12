@@ -12,7 +12,10 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Calculator" ,style: TextStyle(color: Colors.white),),
+        title: Text(
+          "Calculator",
+          style: TextStyle(color: Colors.white),
+        ),
         centerTitle: true,
         backgroundColor: Colors.black,
       ),
@@ -20,16 +23,25 @@ class _HomeState extends State<Home> {
         width: double.infinity,
         height: double.infinity,
         color: Colors.black,
-        child:Row(
-    children: [
-         for(int i=0 ;i<4 ;i++)
-           Container(
-             width: 70,
-             height: 70,
-             color: Colors.white,
-             margin: EdgeInsets.all(5),
-           ),
-       ],
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            for (int i = 0; i < 7; i++)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  for (int i = 0; i < 4; i++)
+                    Container(
+                      width: 60,
+                      height: 60,
+                      color: Colors.white,
+                      margin: EdgeInsets.all(15),
+                    ),
+                ],
+              ),
+          ],
         ),
       ),
     );
