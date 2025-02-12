@@ -45,8 +45,12 @@ class _HomeState extends State<Home> {
           ),
               Expanded(
                   child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children:buttonlabels.map((row){
                   return Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children:row.map((label){
                      return CalculatorButton(
                          label: label);
