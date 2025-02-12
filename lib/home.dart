@@ -8,6 +8,16 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+
+  final buttonlabel=[
+    ['AC', '%', '√', 'π'],
+    ['x^2', 'x^3' , 'sin' , 'cos' ,'tan'],
+    ['e^x' ,'1/x' , 'sin^-1','cos^-1','tan^-1'],
+    ['7', '8', '9', '/'],
+    ['4', '5', '6', '*'],
+    ['1', '2', '3', '-'],
+    ['C', '0', '=', '+'],
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
