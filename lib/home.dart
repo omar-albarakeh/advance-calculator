@@ -16,7 +16,7 @@ class _HomeState extends State<Home> {
   final buttonLabels = [
     ['%', '√', 'π', 'AC'],
     ['x^', 'sin', 'cos', 'tan'],
-    ['e^x', 'sin^-1', 'cos^-1', '/'],
+    ['e^x', '(', ')', '/'],
     ['7', '8', '9', '*'],
     ['4', '5', '6', '-'],
     ['1', '2', '3', '+'],
@@ -54,7 +54,13 @@ class _HomeState extends State<Home> {
               .replaceAll('√', 'sqrt')
               .replaceAll('π', '3.141592653589793')
               .replaceAll('e^x', 'exp')
-              .replaceAll('%', '/100');
+              .replaceAll('%', '/100')
+              .replaceAllMapped(RegExp(r'sin\((.*?)\)'), (match) => 'sin(${match.group(1)}*3.141592653589793/180)')
+              .replaceAllMapped(RegExp(r'cos\((.*?)\)'), (match) => 'cos(${match.group(1)}*3.141592653589793/180)')
+              .replaceAllMapped(RegExp(r'tan\((.*?)\)'), (match) => 'tan(${match.group(1)}*3.141592653589793/180)')
+              .replaceAllMapped(RegExp(r'sin\^-1\((.*?)\)'), (match) => 'asin(${match.group(1)})')
+              .replaceAllMapped(RegExp(r'cos\^-1\((.*?)\)'), (match) => 'acos(${match.group(1)})')
+              .replaceAllMapped(RegExp(r'tan\^-1\((.*?)\)'), (match) => 'atan(${match.group(1)})');
 
           Parser p = Parser();
           Expression exp = p.parse(finalExpression);
@@ -68,6 +74,7 @@ class _HomeState extends State<Home> {
       }
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
