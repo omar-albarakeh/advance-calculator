@@ -8,8 +8,8 @@ class CalculatorButton extends StatelessWidget {
 
   const CalculatorButton({
     super.key,
-    this.width = 70,
-    this.height=70,
+    this.width = 60,
+    this.height=60,
     required this.label,
     this.color= Colors.white});
 
