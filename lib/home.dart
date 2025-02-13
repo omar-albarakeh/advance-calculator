@@ -14,10 +14,10 @@ class _HomeState extends State<Home> {
     ['%', '√', 'π' ,'AC'],
     ['x^','sin', 'cos', 'tan'],
     ['e^x', 'sin^-1', 'cos^-1', '/'],
-    ['7', '8', '9', ],
-    ['4', '5', '6', '*'],
-    ['1', '2', '3', '-'],
-    ['0', '=', '+'],
+    ['7', '8', '9','*' ],
+    ['4', '5', '6',  '-'],
+    ['1', '2', '3', '+'],
+    ['0', '='],
   ];
 
   Color getButtonColor(String label) {
@@ -34,7 +34,9 @@ class _HomeState extends State<Home> {
   double getButtonWidth(String label){
     switch(label){
       case "0":
-        return 140;
+        return 160;
+      case "=":
+      return 140;
       default:
         return 70;
     }
