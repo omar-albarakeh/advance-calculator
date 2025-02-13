@@ -11,15 +11,34 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
 
   final buttonlabels = [
-    ['AC', '%', '√', 'π' ],
+    ['%', '√', 'π' ,'AC'],
     ['x^','sin', 'cos', 'tan'],
-    ['e^x', 'sin^-1', 'cos^-1', 'tan^-1'],
-    ['7', '8', '9', '/'],
+    ['e^x', 'sin^-1', 'cos^-1', '/'],
+    ['7', '8', '9', ],
     ['4', '5', '6', '*'],
     ['1', '2', '3', '-'],
-    ['C', '0', '=', '+'],
+    ['0', '=', '+'],
   ];
 
+  Color getButtonColor(String label) {
+    switch (label) {
+      case 'AC':
+        return Colors.orange;
+      case '=':
+        return Colors.green;
+      default:
+        return Colors.white;
+    }
+  }
+
+  double getButtonWidth(String label){
+    switch(label){
+      case "0":
+        return 140;
+      default:
+        return 70;
+    }
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,7 +72,11 @@ class _HomeState extends State<Home> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children:row.map((label){
                      return CalculatorButton(
-                         label: label);
+                       width: getButtonWidth(label),
+                         label: label,
+                     color: getButtonColor(label),
+                     )
+                     ;
                     }).toList(),
                   );
                 }).toList(),

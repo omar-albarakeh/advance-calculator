@@ -1,19 +1,26 @@
 import 'package:flutter/material.dart';
 
 class CalculatorButton extends StatelessWidget {
-  final double size;
+  final double width;
+  final double height;
   final String label;
+  final Color color;
 
-  const CalculatorButton({super.key, this.size = 65, required this.label});
+  const CalculatorButton({
+    super.key,
+    this.width = 70,
+    this.height=70,
+    required this.label,
+    this.color= Colors.white});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: size,
-      height: size,
-      margin: EdgeInsets.all(5),
+      width: width,
+      height: height,
+      margin: EdgeInsets.all(8),
       decoration: BoxDecoration(
-        color: Colors.white,
+        color: color,
         borderRadius: BorderRadius.circular(20),
       ),
       child: Center(
